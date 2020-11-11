@@ -12,7 +12,8 @@ function createWindow() {
     },
   });
 
-  win.loadFile("index.html"); // This changed to loadURL() as below
+  // win.loadFile("index.html"); // This changed to loadURL() as below
+
   win.loadURL(
     isDev
       ? "http://localhost:3000"
