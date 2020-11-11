@@ -6,6 +6,7 @@ const AppWindow = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background: blueviolet;
 `;
 
 function App() {

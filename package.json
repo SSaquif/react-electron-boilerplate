@@ -2,7 +2,13 @@
   "name": "react-electron-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "main": "public/main.js",
+  "author": "Sadnan Saquif",
+  "description": "Barebones React Elctron Boilerplate",
+  "build": {
+    "appId": "react.electron.boilerplate"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -19,6 +25,7 @@
     "concurrently": "^5.3.0",
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1",
+    "electron-packager": "^15.1.0",
     "wait-on": "^5.2.0"
   },
   "scripts": {

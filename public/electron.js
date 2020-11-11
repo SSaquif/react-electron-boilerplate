@@ -4,7 +4,7 @@ const isDev = require("electron-is-dev");
 
 function createWindow() {
   //Line 3
-  const win = new BrowserWindow({
+  let win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -15,12 +15,12 @@ function createWindow() {
   // win.loadFile("index.html"); // This changed to loadURL() as below
 
   win.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.json(__dirname, "../build/index.html")}`
+    isDev ? "http://localhost:3000" : `file://${__dirname}/index.html`
   );
 
-  // win.on("closed", () => (win = null));
+  win.on("closed", () => {
+    win = null;
+  });
 
   //OPen DevTools
   win.webContents.openDevTools();
@@ -30,6 +30,7 @@ app.whenReady().then(createWindow); //Line 16
 
 //Line 18
 app.on("window-all-closed", () => {
+  // For non mac (darwin == mac)
   if (process.platform !== "darwin") {
     app.quit();
   }
